@@ -1,4 +1,4 @@
-var cartArr=[]
+export var cartArr=[]
 var dataRow1
 var dataRow2
 var dataRow3
@@ -140,18 +140,18 @@ dataRow3.map((product, index) => {
 
 });
 
+
 var card = document.querySelector(".card")
 var addToCartBtn = document.querySelector('#addToCartBtn');
   pushToCart = (a,b)=>{
-    console.log(data[0][b][a])
+   // console.log(data[0][b][a])
     cartArr.push(data[0][b][a])
-    console.log('cartArr',cartArr)
+   // console.log('cartArr',cartArr)
     navCart.innerHTML=cartArr.length
   }
 
  // addToCartBtn.addEventListener('click', pushToCart)
 
+ 
 
 });
-
-
