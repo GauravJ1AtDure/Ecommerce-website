@@ -80,10 +80,11 @@ nav ul li #home-nav:hover{
     cursor: pointer;
 }
 
-.product-categories,.sub-product-categories{
+.product-categories{
     display: flex;
     justify-content: space-around;
     background-color: aqua;
+   
 }
 
 .main{
