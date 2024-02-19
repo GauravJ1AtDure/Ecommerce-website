@@ -6,13 +6,15 @@ var dataRow2
 var dataRow3
 var navCart=document.querySelector('#navCart')
 
-productnav.addEventListener('click',displayProduct)
 
-displayProduct=()=>{
 
-  product_categories.style.backgroundColor = "lightblue";
+let displayProduct=()=>{
+
+  product_categories.style.backgroundColor = "red";
 
 }
+
+productnav.addEventListener('click',displayProduct)
 
 fetch("/data/products.json")
 .then(response => {
