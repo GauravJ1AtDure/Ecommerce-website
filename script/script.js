@@ -5,16 +5,62 @@ var dataRow1
 var dataRow2
 var dataRow3
 var navCart=document.querySelector('#navCart')
+let man_category_link = document.querySelector("#man_category")
+let woman_category_link = document.querySelector("#woman_category")
+let kids_category_link = document.querySelector("#kids_category")
+let main_section=document.querySelector("#main_section")
+let man_section=document.querySelector("#man_section")
+let woman_section=document.querySelector("#woman_section")
+let kids_section=document.querySelector("#kids_section")
+let trends=document.querySelector('#trends')
+let h1text1=document.querySelector('#h1text1')
+let h1text2=document.querySelector('#h1text2')
+let imgsrc=document.querySelector('#imgsrc')
+let ptext=document.querySelector('#ptext')
+let active_section = 'main'
 
-
-
-let displayProduct=()=>{
-
-  product_categories.style.backgroundColor = "red";
-
+function displayProductCategories(){
+  
+  if(product_categories.style.display === "none")
+  {
+  product_categories.style.display = "flex";
+  }
+  else
+  {
+  product_categories.style.display="none"
+  }
 }
 
-productnav.addEventListener('click',displayProduct)
+//productnav.addEventListener('click',displayProductCategories)
+
+let showMenSection=()=>{
+  active_section='men'
+  trends.innerHTML='men'
+  h1text1.innerHTML="men text"
+  h1text2.innerHTML="men text"
+  ptext.innerHTML="Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+  imgsrc.src='/images/men_section_pick.jpg'
+  //console.log(active_section)
+}
+
+let showWomenSection=()=>{
+  active_section = 'women'
+  trends.innerHTML='women'
+  h1text1.innerHTML="women text"
+  h1text2.innerHTML="women text"
+  ptext.innerHTML="Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+  imgsrc.src='/images/woman_section_pick.jpg'
+  
+}
+
+let showKidsSection=()=>{
+  active_section = 'kids'
+  trends.innerHTML='kids'
+  h1text1.innerHTML="kids text"
+  h1text2.innerHTML="kids text"
+  ptext.innerHTML="Lorem ipsum dolor sit amet consectetur, adipisicing elit."
+  imgsrc.src='/images/kids_section_pick.jpg'
+}
 
 fetch("/data/products.json")
 .then(response => {
@@ -24,8 +70,8 @@ fetch("/data/products.json")
     //console.log(data[0].products_101)
     //dataRow1 = JSON.stringify(data[0].products)
     dataRow1 = data[0].products_101
-    dataRow2 = data[0].products_102
-    dataRow3 = data[0].products_103
+    //dataRow2 = data[0].products_102
+    //dataRow3 = data[0].products_103
     //console.log('dataRows',data[0])
     let row1 = document.getElementById('row');
     let starsvg = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
@@ -44,6 +90,7 @@ fetch("/data/products.json")
 
   
    dataRow1.map((product, index) => {
+    
     var row='products_101'
     row1.innerHTML += `<div class="col">
     <div class="card">
@@ -79,7 +126,6 @@ fetch("/data/products.json")
     </div>
   </div><br>
 `
-
 
 });
 

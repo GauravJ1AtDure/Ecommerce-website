@@ -80,16 +80,24 @@ nav ul li #home-nav:hover{
     cursor: pointer;
 }
 
+nav ul li{
+    cursor: pointer;
+}
+
 .product-categories{
     display: flex;
     justify-content: space-around;
     background-color: aqua;
-   
+    display: none;
 }
 
 .main{
     display: flex;
     justify-content: space-around;
+}
+
+#man_section,#woman_section,#kids_section{
+    display: none;
 }
 
 .main .main-text{
