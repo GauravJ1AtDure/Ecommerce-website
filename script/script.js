@@ -17,6 +17,7 @@ let h1text1=document.querySelector('#h1text1')
 let h1text2=document.querySelector('#h1text2')
 let imgsrc=document.querySelector('#imgsrc')
 let ptext=document.querySelector('#ptext')
+let pagelink=document.querySelector('#pagelink')
 let active_section = 'main'
 
 function displayProductCategories(){
@@ -40,7 +41,7 @@ let showMenSection=()=>{
   h1text2.innerHTML="men text"
   ptext.innerHTML="Lorem ipsum dolor sit amet consectetur, adipisicing elit."
   imgsrc.src='/images/men_section_pick.jpg'
-  //console.log(active_section)
+  pagelink.href='/pages/men_products.html'
 }
 
 let showWomenSection=()=>{
@@ -50,6 +51,7 @@ let showWomenSection=()=>{
   h1text2.innerHTML="women text"
   ptext.innerHTML="Lorem ipsum dolor sit amet consectetur, adipisicing elit."
   imgsrc.src='/images/woman_section_pick.jpg'
+  pagelink.href='/pages/women_products.html'
   
 }
 
@@ -60,6 +62,7 @@ let showKidsSection=()=>{
   h1text2.innerHTML="kids text"
   ptext.innerHTML="Lorem ipsum dolor sit amet consectetur, adipisicing elit."
   imgsrc.src='/images/kids_section_pick.jpg'
+  pagelink.href='/pages/kids_products.html'
 }
 
 fetch("/data/products.json")

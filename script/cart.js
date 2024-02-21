@@ -21,9 +21,9 @@ let final_payment=document.querySelector("#final_payment")
 final_payment.innerHTML=final_cost
 
 
-console.log('totalPrice',totalPrice)
-console.log('delivery_charges',delivery_charges)
-console.log('total',totalPrice + delivery_charges)
+// console.log('totalPrice',totalPrice)
+// console.log('delivery_charges',delivery_charges)
+// console.log('total',totalPrice + delivery_charges)
 
 updateCart=()=>{
 cartArr.map((product, index) => {
