@@ -1,6 +1,7 @@
 let productnav=document.querySelector('#product-nav')
 let product_categories=document.querySelector('.product-categories')
 var cartArr=[]
+var selected_product
 var dataRow1
 var dataRow2
 var dataRow3
@@ -19,6 +20,10 @@ let imgsrc=document.querySelector('#imgsrc')
 let ptext=document.querySelector('#ptext')
 let pagelink=document.querySelector('#pagelink')
 let active_section = 'main'
+var selected_product_img=document.querySelector('#selected_product_img')
+var selected_product_brand=document.querySelector('#selected_product_brand')
+var selected_product_title=document.querySelector('#selected_product_title')
+var selected_product_price=document.querySelector('#selected_product_price')
 
 function displayProductCategories(){
   
@@ -95,39 +100,22 @@ fetch("/data/products.json")
    dataRow1.map((product, index) => {
     
     var row='products_101'
-    row1.innerHTML += `<div class="col">
-    <div class="card">
-      <img src=${product.thumbnail} class="card-img-top" alt=${product.title} height= "300em";>
-      <div class="card-body">
-        <h5 class="card-title">${product.title}</h5>
-        <div class="row">
-      <div class="col-10">
-        <p class="card-text">
-          <span>${starsvg}</span>
-          <span>${starsvg}</span>
-          <span>${halfblankstarsvg}</span>
-          <span>${blankstarsvg}</span>
-          <span>${blankstarsvg}</span>
-          (${product.ratings})
-        </p>
-      </div>
-      <div class="col-2">
-        <span>${bookmark}</span>
+    row1.innerHTML += `<div class="col-lg-3 col-md-6 mb-4">
+    <!-- Card-->
+    <div class="card rounded shadow-sm border-0">
+      <div class="card-body p-4"><img src=${product.thumbnail} alt="" class="img-fluid d-block mx-auto mb-3" style="
+      height: 15em;width: 20vw;"><h5> <button onclick="pushToCart(${index})" row=${product.row} class="text-dark" style="border: none; background-color: transparent;">${product.brand}</button></h5>
+        <p class="small text-muted font-italic">${product.title}</p>
+        <ul class="list-inline small">
+          <li class="list-inline-item m-0">${starsvg}</li>
+          <li class="list-inline-item m-0">${starsvg}</li>
+          <li class="list-inline-item m-0">${starsvg}</li>
+          <li class="list-inline-item m-0">${halfblankstarsvg}</li>
+          <li class="list-inline-item m-0">${blankstarsvg}</li>
+        </ul>
       </div>
     </div>
-    
   </div>
-  <div class="row align-items-center text-center g-0">
-   <div class="col-4">
-     <h5>&#8377;${product.price}</h5>
-   </div>
-   <div class="col-8">
-     <button onclick="pushToCart(${index})" row=${product.row} id="addToCartBtn" class="btn btn-dark w-100 p-3 rounded-0 text-warning">ADD TO CART</button>
-   </div>
- </div>
-      </div>
-    </div>
-  </div><br>
 `
 
 });
@@ -135,11 +123,18 @@ fetch("/data/products.json")
 
 var card = document.querySelector(".card")
 var addToCartBtn = document.querySelector('#addToCartBtn');
+
  pushToCart = (a)=>{
  // console.log('data',data[0].products_101[a])
- cartArr.push(data[0].products_101[a])
+ //cartArr.push(data[0].products_101[a])
+ selected_product=data[0].products_101[a]
  localStorage.setItem('productCart',JSON.stringify(cartArr))
- console.log(cartArr)
+ console.log('1',selected_product)
+ console.log('title',selected_product_title)
+ selected_product_brand.innerHTML=selected_product.brand
+ selected_product_title.innerHTML=selected_product.title
+ selected_product_price.innerHTML=selected_product.price
+
     navCart.innerHTML=cartArr.length
     
   }
