@@ -1,7 +1,5 @@
 let productnav=document.querySelector('#product-nav')
 let product_categories=document.querySelector('.product-categories')
-var cartArr=[]
-var selected_product
 var dataRow1
 var dataRow2
 var dataRow3
@@ -20,10 +18,7 @@ let imgsrc=document.querySelector('#imgsrc')
 let ptext=document.querySelector('#ptext')
 let pagelink=document.querySelector('#pagelink')
 let active_section = 'main'
-var selected_product_img=document.querySelector('#selected_product_img')
-var selected_product_brand=document.querySelector('#selected_product_brand')
-var selected_product_title=document.querySelector('#selected_product_title')
-var selected_product_price=document.querySelector('#selected_product_price')
+
 
 function displayProductCategories(){
   
@@ -104,7 +99,7 @@ fetch("/data/products.json")
     <!-- Card-->
     <div class="card rounded shadow-sm border-0">
       <div class="card-body p-4"><img src=${product.thumbnail} alt="" class="img-fluid d-block mx-auto mb-3" style="
-      height: 15em;width: 20vw;"><h5> <button onclick="pushToCart(${index})" row=${product.row} class="text-dark" style="border: none; background-color: transparent;">${product.brand}</button></h5>
+      height: 15em;width: 20vw;"><a href="/pages/product_card.html"><h5> <button onclick="pushToCart(${index})" row=${product.row} class="text-dark" style="border: none; background-color: transparent;">${product.brand}</button></h5></a>
         <p class="small text-muted font-italic">${product.title}</p>
         <ul class="list-inline small">
           <li class="list-inline-item m-0">${starsvg}</li>
@@ -121,21 +116,21 @@ fetch("/data/products.json")
 });
 
 
-var card = document.querySelector(".card")
-var addToCartBtn = document.querySelector('#addToCartBtn');
+let selected_product
 
  pushToCart = (a)=>{
  // console.log('data',data[0].products_101[a])
  //cartArr.push(data[0].products_101[a])
+ //localStorage.setItem('productCart',JSON.stringify(cartArr))
  selected_product=data[0].products_101[a]
- localStorage.setItem('productCart',JSON.stringify(cartArr))
+ localStorage.setItem('selectedProduct',JSON.stringify(selected_product))
  console.log('1',selected_product)
- console.log('title',selected_product_title)
- selected_product_brand.innerHTML=selected_product.brand
- selected_product_title.innerHTML=selected_product.title
- selected_product_price.innerHTML=selected_product.price
 
-    navCart.innerHTML=cartArr.length
+// let selectedProduct=localStorage.getItem('selectedProduct');
+// let currentProduct=JSON.parse(selectedProduct);
+// console.log('2',currentProduct)
+
+//navCart.innerHTML=cartArr.length
     
   }
 
