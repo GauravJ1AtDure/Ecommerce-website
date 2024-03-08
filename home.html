@@ -26,34 +26,16 @@
         <div class="navbar-collapse collapse" id="menu">
           <ul class="navbar-nav ms-auto" style="list-style:none;">
             <li class="nav-item mx-3">
-              <a class="nav-link">Home</a>
+              <a href="/home.html" class="nav-link">Home</a>
             </li>
             <li class="nav-item mx-3 dropdown">
               <a class="nav-link" id="product-nav" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
              <ul id="product-categories" class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li id="parent_nav"><a class="dropdown-item">Men</a>
-              <ul id="child_nav">
-                <li><a href="/pages/men_products.html">All Products</a></li>
-                <li onclick="selectSubCategory('shirt')" id="shirts">Shirts</li>
-                <li onclick="selectSubCategory('pants')" id="pants">Pants</li>
-                <li onclick="selectSubCategory('hoodies')" id="hoodies">Hoodies</li>
-              </ul>
+              <li id="parent_nav"><a href="/pages/men_products.html" class="dropdown-item">Men</a>
               </li>
-              <li id="parent_nav"><a class="dropdown-item">Women</a>
-                <ul id="child_nav">
-                  <li><a href="/pages/women_products.html">All Products</a></li>
-                  <li onclick="selectSubCategory('dresses')">Dresses</li>
-                  <li onclick="selectSubCategory('kurtis')">Kurtis</li>
-                  <li onclick="selectSubCategory('sarees')">Sarees</li>
-                </ul>
+              <li id="parent_nav"><a href="/pages/women_products.html" class="dropdown-item">Women</a>
               </li>
-              <li id="parent_nav"><a class="dropdown-item">Kids</a>
-                <ul id="child_nav">
-                  <li><a href="/pages/kids_products.html">All Products</a></li>
-                  <li onclick="selectSubCategory('tshirts')">T-shirts</li>
-                  <li onclick="selectSubCategory('shorts')">Shorts</li>
-                  <li onclick="selectSubCategory('winterwear')">Winter-wears</li>
-                </ul>
+              <li id="parent_nav"><a href="/pages/kids_products.html" class="dropdown-item">Kids</a>
               </li>
              </ul>
             </li>

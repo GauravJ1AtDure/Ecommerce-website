@@ -26,14 +26,14 @@
       <div class="navbar-collapse collapse" id="menu">
         <ul class="navbar-nav ms-auto" style="list-style:none;">
           <li class="nav-item mx-3">
-            <a class="nav-link">Home</a>
+            <a href="/home.html" class="nav-link">Home</a>
           </li>
           <li class="nav-item mx-3 dropdown">
             <a class="nav-link" id="product-nav" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
            <ul id="product-categories" class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li id="parent_nav"><a class="dropdown-item">Men</a>
             <ul id="child_nav">
-              <li><a href="/pages/all_products.html">All Products</a></li>
+              <li><a href="/pages/men_products.html">All Products</a></li>
               <li onclick="selectSubCategory('shirts')" id="shirts">Shirts</li>
               <li onclick="selectSubCategory('pants')" id="pants">Pants</li>
               <li onclick="selectSubCategory('hoodies')" id="hoodies">Hoodies</li>
@@ -74,10 +74,37 @@
     </div>
 
 
-    <div class="container">
+    <div id="product_container" class="container">
+      <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+          <a class="nav-link" onclick="selectSubCategory('all')" aria-current="page">All Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" onclick="selectSubCategory('shirts')">Shirts</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" onclick="selectSubCategory('pants')">Pants</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" onclick="selectSubCategory('hoodies')">Hoodies</a>
+        </li>
+        <li class="nav-item">
+          <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+            <input type="radio" class="btn-check" onclick="selectDropDown('latest')" name="btnradio" id="btnradio1" autocomplete="off" checked>
+            <label class="btn btn-outline-primary" for="btnradio1">Latest</label>
+          
+            <input type="radio" class="btn-check" onclick="selectDropDown('low_to_high')" name="btnradio" id="btnradio2" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio2">Low to High</label>
+          
+            <input type="radio" class="btn-check" onclick="selectDropDown('high_to_low')" name="btnradio" id="btnradio3" autocomplete="off">
+            <label class="btn btn-outline-primary" for="btnradio3">High to Low</label>
+          </div>
+        </li>
+      </ul>
+
         <div id="row" class="row row-cols-1 row-cols-md-4 g-4">
         </div>
-        </div>
+        
 
         <div class="container">
           <div class="row justify-content-around">

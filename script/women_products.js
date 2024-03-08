@@ -46,7 +46,7 @@ fetch("/data/products.json")
 
    dataRow1.forEach((product, index) => {
 
-    if(product.category==='men')
+    if(product.category==='women')
 {
     product_container =`<div class="col-lg-3 col-md-6 mb-4">
     <!-- Card-->
@@ -101,8 +101,8 @@ else if(t ==='high_to_low')
 
 let selectSubCategory=(x)=>{
   p=x
-  
- if(p ==='all')
+
+if(p ==='all')
 {
   fetchData()
 }
@@ -145,10 +145,13 @@ row.innerHTML=''
   </div>
   ` 
   
+  
+  
   row.innerHTML+=product_container
   
   });
   
+ 
   
 }
 
