@@ -18,6 +18,9 @@ let ptext=document.querySelector('#ptext')
 let pagelink=document.querySelector('#pagelink')
 let active_section = 'main'
 
+
+
+
 //productnav.addEventListener('click',displayProductCategories)
 
 
@@ -88,9 +91,5 @@ let selected_product
     
   }
 
-let searchInput=document.querySelector('#searchInput')  
-let getSearchResults=(p)=>{
-  console.log(p)
-}
 
 });

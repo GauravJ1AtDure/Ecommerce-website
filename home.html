@@ -9,7 +9,7 @@
     <title>Home</title>
 </head>
 <body>
-    <div class="navbar navbar-light navbar-expand-md px-3">
+    <div class="navbar navbar-light bg-light navbar-expand-md px-3">
       <div class="container-fluid">
         <a class="navbar-brand">
           <h1>Wardrobe</h1>
@@ -26,16 +26,34 @@
         <div class="navbar-collapse collapse" id="menu">
           <ul class="navbar-nav ms-auto" style="list-style:none;">
             <li class="nav-item mx-3">
-              <a href="/home.html" class="nav-link">Home</a>
+              <a class="nav-link">Home</a>
             </li>
             <li class="nav-item mx-3 dropdown">
               <a class="nav-link" id="product-nav" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
              <ul id="product-categories" class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li id="parent_nav"><a href="/pages/men_products.html" class="dropdown-item">Men</a>
+              <li id="parent_nav" onclick="showMenSection()"><a class="dropdown-item">Men</a>
+              <ul id="child_nav">
+                <li><a href="/pages/men_products.html">All Products</a></li>
+                <li>Shirts</li>
+                <li>Pants</li>
+                <li>Hoodies</li>
+              </ul>
               </li>
-              <li id="parent_nav"><a href="/pages/women_products.html" class="dropdown-item">Women</a>
+              <li id="parent_nav" onclick="showWomenSection()"><a class="dropdown-item">Women</a>
+                <ul id="child_nav">
+                  <li><a href="/pages/women_products.html">All Products</a></li>
+                  <li>Dresses</li>
+                  <li>Kurtis</li>
+                  <li>Sarees</li>
+                </ul>
               </li>
-              <li id="parent_nav"><a href="/pages/kids_products.html" class="dropdown-item">Kids</a>
+              <li id="parent_nav" onclick="showKidsSection()"><a class="dropdown-item">Kids</a>
+                <ul id="child_nav">
+                  <li><a href="/pages/kids_products.html">All Products</a></li>
+                  <li>T-shirts</li>
+                  <li>Shorts</li>
+                  <li>Winter-wears</li>
+                </ul>
               </li>
              </ul>
             </li>
@@ -71,57 +89,31 @@
             <div class="carousel-inner">
             <!-- Image one-->
               <div class="carousel-item active">
-                <img src="/images/landing_pg_img_1-removebg-preview.png" class="d-block w-100" alt="landing_pg_img_1">
-                <div class="carousel-caption text-start">
-                  <h2>Raining Offers.</h2>
-                  <p>Get 20% off on all man's fashion</p>
-                  <p><a class="btn btn-lg btn-primary" href="/pages/men_products.html">Explore</a></p>
+                <img src="/images/landing_pg_img_1.png" class="d-block w-100" alt="..." style="height: 30em;">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5 class="text-start">First slide label</h5>
+                  <p>Some representative placeholder content for the first slide.</p>
                 </div>
               </div>
  
               <!-- image two -->
               <div class="carousel-item">
-                <img src="/images/landing_pg_img_2-removebg-preview.png" class="d-block w-100" alt="landing_pg_img_2">
-                <div class="carousel-caption">
-                  <h2>One more for good measure.</h2>
-                  <p>Some representative placeholder content for the third slide of this carousel.</p>
-                  <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
-                </div>
+                <img src="/images/landing_pg_img_2.jpg" class="d-block w-100" alt="..." style="height: 30em;">
               </div>
  
               <!-- Image Three -->
               <div class="carousel-item">
-                <img src="/images/landing_pg_img_3-removebg-preview.png" class="d-block w-100" alt="landing_pg_img_3">
-                <div class="carousel-caption text-start">
-                  <h2>Style with Comfort</h2>
-                  <p>Multiple options to show your style with comfort</p>
-                
-                </div>
-                <div class="carousel-caption text-end">
-                  <h2>New Arrivals</h2>
-                  <p>Get the latest fashion at affordable rates</p>
-                  
-                </div>
+                <img src="/images/landing_pg_img_3.jpg" class="d-block w-100" alt="..." style="height: 30em;">
               </div>
  
               <!-- Image Four -->
               <div class="carousel-item">
-                <img src="/images/landing_pg_img_4-removebg-preview.png" class="d-block w-100" alt="landing_pg_img_4">
-                <div class="carousel-caption text-start">
-                  <h2>Traditional, Modern and Awesome.</h2>
-                  <p>Respect your culture with your fashion</p>
-                  <p><a class="btn btn-lg btn-primary" href="/pages/women_products.html">Explore</a></p>
-                </div>
+                <img src="/images/landing_pg_img_4.jpg" class="d-block w-100" alt="..." style="height: 30em;">
               </div>
  
               <!-- Image Five -->
               <div class="carousel-item">
-                <img src="/images/landing_pg_img_5-removebg-preview.png" class="d-block w-100" alt="landing_pg_img_5">
-                <div class="carousel-caption text-start">
-                  <h2>Fashion with Fun.</h2>
-                  <p>Cool fashion for your little one.</p>
-                  <p><a class="btn btn-lg btn-primary" href="/pages/kids_products.html">Explore</a></p>
-                </div>
+                <img src="/images/landing_pg_img_5.jpg" class="d-block w-100" alt="..." style="height: 30em;">
               </div>
             </div>
  
@@ -145,13 +137,12 @@
 
 <div class="container text-center">
     <div class="row pb-5 mb-4">
-      <h4 class="text-center">Most Loved Products - Men</h4>
         <div onclick="checkout(10)" class="col-lg-3 col-md-6 mb-4 mb-lg-0">
           <!-- Card-->
           <div class="card rounded shadow-sm border-0">
-            <div class="card-body p-4"><img src="/images/10.webp" alt="" class="img-fluid d-block mx-auto mb-3">
-              <h6> <a class="text-dark">Raymond</a></h6>
-              <span class="small text-muted font-italic">Formal Shirt</span>
+            <div class="card-body p-4"><img src="/images/10.webp" alt="" class="img-fluid d-block mx-auto mb-3" style="width: 18vw; height: 20vh;">
+              <h5> <a class="text-dark">Raymond</a></h5>
+              <p class="small text-muted font-italic">Formal Shirt</p>
               <ul class="list-inline small">
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
@@ -163,12 +154,12 @@
           </div>
         </div>
     
-        <div onclick="checkout(2)" class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+        <div  onclick="checkout(2)" class="col-lg-3 col-md-6 mb-4 mb-lg-0">
           <!-- Card-->
           <div class="card rounded shadow-sm border-0">
-            <div class="card-body p-4"><img src="/images/2.webp" alt="" class="img-fluid d-block mx-auto mb-3">
-              <h6> <a class="text-dark">Allen Solly</a></h6>
-              <span class="small text-muted font-italic">Casual Cargo</span>
+            <div class="card-body p-4"><img src="/images/2.webp" alt="" class="img-fluid d-block mx-auto mb-3" style="width: 18vw; height: 20vh;">
+              <h5> <aside class="text-dark">Allen Solly</a></h5>
+              <p class="small text-muted font-italic">Casual Cargo</p>
               <ul class="list-inline small">
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
@@ -183,9 +174,9 @@
         <div  onclick="checkout(1)" class="col-lg-3 col-md-6 mb-4 mb-lg-0">
           <!-- Card-->
           <div class="card rounded shadow-sm border-0">
-            <div class="card-body p-4"><img src="/images/1.webp" alt="" class="img-fluid d-block mx-auto mb-3">
-              <h6> <a class="text-dark">Mufti</a></h6>
-              <span class="small text-muted font-italic">Casual Solid Shirt</span>
+            <div class="card-body p-4"><img src="/images/1.webp" alt="" class="img-fluid d-block mx-auto mb-3" style="width: 18vw; height: 20vh;">
+              <h5> <a class="text-dark">Mufti</a></h5>
+              <p class="small text-muted font-italic">Casual Solid Shirt</p>
               <ul class="list-inline small">
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
@@ -200,9 +191,9 @@
         <div  onclick="checkout(11)" class="col-lg-3 col-md-6 mb-4 mb-lg-0">
           <!-- Card-->
           <div class="card rounded shadow-sm border-0">
-            <div class="card-body p-4"><img src="/images/11.webp" alt="" class="img-fluid d-block mx-auto mb-3">
-              <h6> <a class="text-dark">Levi's</a></h6>
-              <span class="small text-muted font-italic">Denim Jeanse</span>
+            <div class="card-body p-4"><img src="/images/11.webp" alt="" class="img-fluid d-block mx-auto mb-3" style="width: 18vw; height: 20vh;">
+              <h5> <a class="text-dark">Levi's</a></h5>
+              <p class="small text-muted font-italic">Denim Jeanse</p>
               <ul class="list-inline small">
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
@@ -216,13 +207,12 @@
     </div>
 
     <div class="row pb-5 mb-4">
-      <h4 class="text-center">Most Loved Products - Women</h4>
         <div onclick="checkout(13)" class="col-lg-3 col-md-6 mb-4 mb-lg-0">
           <!-- Card-->
           <div class="card rounded shadow-sm border-0">
-            <div class="card-body p-4"><img src="/images/13.webp" alt="" class="img-fluid d-block mx-auto mb-3">
-              <h6> <a class="text-dark">Kiaraa</a></h6>
-              <span class="small text-muted font-italic">Woven Silk Saree</span>
+            <div class="card-body p-4"><img src="/images/13.webp" alt="" class="img-fluid d-block mx-auto mb-3" style="width: 18vw; height: 20vh;">
+              <h5> <a class="text-dark">Kiaraa</a></h5>
+              <p class="small text-muted font-italic">Woven Silk Saree</p>
               <ul class="list-inline small">
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
@@ -237,9 +227,9 @@
         <div onclick="checkout(22)" class="col-lg-3 col-md-6 mb-4 mb-lg-0">
           <!-- Card-->
           <div class="card rounded shadow-sm border-0">
-            <div class="card-body p-4"><img src="/images/22.webp" alt="" class="img-fluid d-block mx-auto mb-3">
-              <h6> <a class="text-dark">Banarasi</a></h6>
-              <span class="small text-muted font-italic">Cotton Saree</span>
+            <div class="card-body p-4"><img src="/images/22.webp" alt="" class="img-fluid d-block mx-auto mb-3" style="width: 18vw; height: 20vh;">
+              <h5> <a class="text-dark">Banarasi</a></h5>
+              <p class="small text-muted font-italic">Cotton Saree</p>
               <ul class="list-inline small">
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
@@ -254,9 +244,9 @@
         <div onclick="checkout(24)" class="col-lg-3 col-md-6 mb-4 mb-lg-0">
           <!-- Card-->
           <div class="card rounded shadow-sm border-0">
-            <div class="card-body p-4"><img src="/images/24.webp" alt="" class="img-fluid d-block mx-auto mb-3">
-              <h6> <a class="text-dark">Fabindia</a></h6>
-              <span class="small text-muted font-italic">Trendy Kurti</span>
+            <div class="card-body p-4"><img src="/images/24.webp" alt="" class="img-fluid d-block mx-auto mb-3" style="width: 18vw; height: 20vh;">
+              <h5> <a class="text-dark">Fabindia</a></h5>
+              <p class="small text-muted font-italic">Trendy Kurti</p>
               <ul class="list-inline small">
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
@@ -271,9 +261,9 @@
         <div onclick="checkout(4)" class="col-lg-3 col-md-6 mb-4 mb-lg-0">
           <!-- Card-->
           <div class="card rounded shadow-sm border-0">
-            <div class="card-body p-4"><img src="/images/4.webp" alt="" class="img-fluid d-block mx-auto mb-3">
-              <h6> <a class="text-dark">Marathe</a></h6>
-              <span class="small text-muted font-italic">Paithni Saree</span>
+            <div class="card-body p-4"><img src="/images/4.webp" alt="" class="img-fluid d-block mx-auto mb-3" style="width: 18vw; height: 20vh;">
+              <h5> <a class="text-dark">Marathe</a></h5>
+              <p class="small text-muted font-italic">Paithni Saree</p>
               <ul class="list-inline small">
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
@@ -287,13 +277,12 @@
     </div>
 
     <div class="row pb-5 mb-4">
-      <h4 class="text-center">Most Loved Products - Kids</h4>
-        <div onclick="checkout(7)" class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
           <!-- Card-->
-          <div class="card rounded shadow-sm border-0">
-            <div class="card-body p-4"><img src="/images/7.webp" alt="" class="img-fluid d-block mx-auto mb-3">
-              <h6> <a class="text-dark">Kids Fashion</a></h6>
-              <span class="small text-muted font-italic">Boys Cotton Printed Tshirt</span>
+          <div  onclick="checkout(7)" class="card rounded shadow-sm border-0">
+            <div class="card-body p-4"><img src="/images/7.webp" alt="" class="img-fluid d-block mx-auto mb-3" style="width: 18vw; height: 20vh;">
+              <h5> <a class="text-dark">Kids Fashion</a></h5>
+              <p class="small text-muted font-italic">Boys Cotton Printed Tshirt</p>
               <ul class="list-inline small">
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
@@ -308,9 +297,9 @@
         <div  onclick="checkout(16)" class="col-lg-3 col-md-6 mb-4 mb-lg-0">
           <!-- Card-->
           <div class="card rounded shadow-sm border-0">
-            <div class="card-body p-4"><img src="/images/16.webp" alt="" class="img-fluid d-block mx-auto mb-3">
-              <h6> <a class="text-dark">John Players</a></h6>
-              <span class="small text-muted font-italic">Boys Trendy T-shirt</span>
+            <div class="card-body p-4"><img src="/images/16.webp" alt="" class="img-fluid d-block mx-auto mb-3" style="width: 18vw; height: 20vh;">
+              <h5> <a class="text-dark">John Players</a></h5>
+              <p class="small text-muted font-italic">Boys Trendy T-shirt</p>
               <ul class="list-inline small">
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
@@ -325,9 +314,9 @@
         <div onclick="checkout(25)" class="col-lg-3 col-md-6 mb-4 mb-lg-0">
           <!-- Card-->
           <div class="card rounded shadow-sm border-0">
-            <div class="card-body p-4"><img src="/images/25.webp" alt="" class="img-fluid d-block mx-auto mb-3">
-              <h6> <a class="text-dark">GINI & JONY</a></h6>
-              <span class="small text-muted font-italic">Boys Printed Hoodie</span>
+            <div class="card-body p-4"><img src="/images/25.webp" alt="" class="img-fluid d-block mx-auto mb-3" style="width: 18vw; height: 20vh;">
+              <h5> <a class="text-dark">GINI & JONY</a></h5>
+              <p class="small text-muted font-italic">Boys Printed Hoodie</p>
               <ul class="list-inline small">
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
@@ -342,9 +331,9 @@
         <div onclick="checkout(27)" class="col-lg-3 col-md-6 mb-4 mb-lg-0">
           <!-- Card-->
           <div class="card rounded shadow-sm border-0">
-            <div class="card-body p-4"><img src="/images/27.webp" alt="" class="img-fluid d-block mx-auto mb-3">
-              <h6> <a class="text-dark">Mikey</a></h6>
-              <span class="small text-muted font-italic">Kids Cotton Zipper</span>
+            <div class="card-body p-4"><img src="/images/27.webp" alt="" class="img-fluid d-block mx-auto mb-3" style="width: 18vw; height: 20vh;">
+              <h5> <a class="text-dark">Mikey</a></h5>
+              <p class="small text-muted font-italic">Kids Cotton Zipper</p>
               <ul class="list-inline small">
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
                 <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
@@ -360,7 +349,7 @@
 
   </div>
 
-  <div id="footer" class="container-fluid">
+  <div class="container">
     <div class="row justify-content-around">
       <div class="col">
             <h5>Trends</h5>
