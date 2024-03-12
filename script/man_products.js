@@ -1,7 +1,6 @@
-let selectedProduct
+let cartArr=[]
 let dropdown_filter=document.querySelector('#dropdown_filter')
 let dataRow1
-let men_products_all=[]
 let men_products=[]
 let product_container
 let row = document.getElementById('row');
@@ -33,29 +32,27 @@ fetch("/data/products.json")
     //console.log(data[0].products_101)
     //dataRow1 = JSON.stringify(data[0].products)
     dataRow1 = [...data[0].products_101]
-    men_products_all = dataRow1.filter((product) => {
-      return product.category==='men';
-    })
    // unique_products = [...new Set(men_products)];
    
    row.innerHTML=''
    if (t ==='low_to_high')
    {
-    men_products_all.sort((a, b) => a.price - b.price)
+    dataRow1.sort((a, b) => a.price - b.price)
   }
    else if(t==='high_to_low')
    {
-    men_products_all.sort((a, b) => b.price - a.price)
+    dataRow1.sort((a, b) => b.price - a.price)
    }
 
-   men_products_all.forEach((product, index) => {
+   dataRow1.forEach((product, index) => {
 
-  
+    if(product.category==='men')
+{
     product_container =`<div class="col-lg-3 col-md-6 mb-4">
     <!-- Card-->
     <div class="card rounded shadow-sm border-0">
       <div class="card-body p-4"><img src=${product.thumbnail} alt="" class="img-fluid d-block mx-auto mb-3" style="
-      height: 15em;width: 20vw;"><div class="row justify-content-between"><div class="col-8"><a href="/pages/product_card.html"><h6> <button onclick="checkout_all(${index})" row=${product.row} class="text-dark" style="border: none; background-color: transparent;">${product.brand}</button></h6></a></div><div class="col-4">
+      height: 15em;width: 20vw;"><div class="row justify-content-between"><div class="col-8"><a href="/pages/product_card.html"><h6> <button onclick="pushToCart(${index})" row=${product.row} class="text-dark" style="border: none; background-color: transparent;">${product.brand}</button></h6></a></div><div class="col-4">
       <h6>&#x20B9;${product.price}</h6>
     </div></div>
     <div class="row justify-content-between">
@@ -75,7 +72,7 @@ fetch("/data/products.json")
   ` 
 
   row.innerHTML+=product_container
-
+}
   });
  
 });
@@ -90,13 +87,13 @@ let selectDropDown=(y)=>{
   if (t ==='low_to_high')
   {
     men_products.sort((a, b) => a.price - b.price)
-    men_products_all.sort((a, b) => a.price - b.price)
+    dataRow1.sort((a, b) => a.price - b.price)
     selectSubCategory(p)
 }
 else if(t ==='high_to_low')
 {
   men_products.sort((a, b) => b.price - a.price)
-  men_products_all.sort((a, b) => b.price - a.price)
+  dataRow1.sort((a, b) => b.price - a.price)
   selectSubCategory(p)
 }
 }
@@ -114,7 +111,7 @@ let selectSubCategory=(x)=>{
 
  // changeDoc()
  //displayArr = [...men_products]
- men_products = men_products_all.filter((product) => {
+ men_products = dataRow1.filter((product) => {
   return product.subcategory===p;
 })
 
@@ -129,7 +126,7 @@ row.innerHTML=''
     <!-- Card-->
     <div class="card rounded shadow-sm border-0">
       <div class="card-body p-4"><img src=${product.thumbnail} alt="" class="img-fluid d-block mx-auto mb-3" style="
-      height: 15em;width: 20vw;"><div class="row justify-content-between"><div class="col-8"><a href="/pages/product_card.html"><h6> <button onclick="checkout(${index})" row=${product.row} class="text-dark" style="border: none; background-color: transparent;">${product.brand}</button></h6></a></div><div class="col-4">
+      height: 15em;width: 20vw;"><div class="row justify-content-between"><div class="col-8"><a href="/pages/product_card.html"><h6> <button onclick="pushToCart(${index})" row=${product.row} class="text-dark" style="border: none; background-color: transparent;">${product.brand}</button></h6></a></div><div class="col-4">
       <h6>&#x20B9;${product.price}</h6>
     </div></div>
     <div class="row justify-content-between">
@@ -158,32 +155,19 @@ row.innerHTML=''
 
 
 
-//if(p ==='all')
-//{
+if(p ==='all')
+{
   fetchData()
-//}
+}
 
 //console.log('p',p)
  var card = document.querySelector(".card")
 var addToCartBtn = document.querySelector('#addToCartBtn');
-
-let checkout_all = (a)=>{
-  console.log('x', a)
- console.log('men_products_all',men_products_all)
- selectedProduct=men_products_all[a]
- localStorage.setItem('selectedProduct',JSON.stringify(selectedProduct))
- console.log(selectedProduct)
- //navCart.innerHTML=cartArr.length
-    
-  }
-
-
-let checkout = (a)=>{
-  console.log('x', a)
- console.log('men_products',men_products)
- selectedProduct=men_products[a]
- localStorage.setItem('selectedProduct',JSON.stringify(selectedProduct))
- console.log(selectedProduct)
- //navCart.innerHTML=cartArr.length
+ pushToCart = (a)=>{
+ // console.log('data',data[0].products_101[a])
+ cartArr.push(data[0].products_101[a])
+ localStorage.setItem('productCart',JSON.stringify(cartArr))
+ console.log(cartArr)
+    navCart.innerHTML=cartArr.length
     
   }

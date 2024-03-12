@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // let product_categories=document.querySelector('#product-categories')
 // function displayProductCategories(){
   
@@ -41,6 +42,8 @@ let showMenSection=()=>{
     imgsrc.src='/images/kids_section_pick.jpg'
     pagelink.href='/pages/kids_products.html'
   }
+=======
+>>>>>>> parent of 85fce98 (working on home page and adding extra products)
 
 fetch("/data/products.json")
 .then(response => {
@@ -52,14 +55,22 @@ fetch("/data/products.json")
     
     let homePageCards=document.querySelector('#homePageCards')
     let selected_product
+<<<<<<< HEAD
     checkout=(x)=>{
+=======
+    let checkout=(x)=>{
+>>>>>>> parent of 85fce98 (working on home page and adding extra products)
       console.log('card click',x)
       selected_product=data[0].products_101[x-1]
       localStorage.setItem('selectedProduct',JSON.stringify(selected_product))
       location.href='/pages/product_card.html'
     }
   
+<<<<<<< HEAD
     homePageCards.addEventListener('click',checkout())
+=======
+    homePageCards.addEventListener('click',checkout)
+>>>>>>> parent of 85fce98 (working on home page and adding extra products)
 
 
 });
