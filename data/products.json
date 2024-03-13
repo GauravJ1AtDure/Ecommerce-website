@@ -12,6 +12,7 @@
                     "ratings": 60,
                     "category": "men",
                     "subcategory": "shirts",
+                    "searchtags":"shirt, mufti, casual shirt, mens shirt",
                     "thumbnail": "/images/1.webp"
                 },
                 {
@@ -24,6 +25,7 @@
                     "ratings": 58,
                     "category": "men",
                     "subcategory": "pants",
+                    "searchtags":"cargo, allen solly, cargo pant, mens cargo",
                     "thumbnail": "/images/2.webp"
                 },
                 {
@@ -36,6 +38,7 @@
                     "ratings": 80,
                     "category": "men",
                     "subcategory": "hoodies",
+                    "searchtags":"hoodie, addidas, sport hoodie, mens hoodie",
                     "thumbnail": "/images/3.webp"
                 },
                 {
@@ -48,6 +51,7 @@
                     "ratings": 930,
                     "category": "women",
                     "subcategory": "sarees",
+                    "searchtags":"saree, addidas, sport hoodie, mens hoodie",
                     "thumbnail": "/images/4.webp"
                 },
                 {
@@ -60,6 +64,7 @@
                     "ratings": 930,
                     "category": "women",
                     "subcategory": "dresses",
+                    "searchtags":"dress, van heusen, party wear, women dress",
                     "thumbnail": "/images/5.webp"
                 },
                 {
@@ -72,6 +77,7 @@
                     "ratings": 930,
                     "category": "women",
                     "subcategory": "kurtis",
+                    "searchtags":"kurti, biba, kurtas, women kurti",
                     "thumbnail": "/images/6.webp"
                 },
                 {
@@ -84,6 +90,7 @@
                     "ratings": 930,
                     "category": "kids",
                     "subcategory": "tshirts",
+                    "searchtags":"tshirt, tshirts, kids tshirt, boys tshirts, kids fashion",
                     "thumbnail": "/images/7.webp"
                 },
                 {
@@ -96,6 +103,7 @@
                     "ratings": 930,
                     "category": "kids",
                     "subcategory": "shorts",
+                    "searchtags":"shorts, short, rancho, boys cargo shorts",
                     "thumbnail": "/images/8.webp"
                 },
                 {
@@ -107,6 +115,7 @@
                     "subtitle": 1,
                     "ratings": 930,
                     "category": "kids",
+                    "searchtags":"hoodie, kids hoodie, ginee, hoodies, ginee",
                     "subcategory": "winterwear",
                     "thumbnail": "/images/9.webp"
                 },
@@ -120,6 +129,7 @@
                     "ratings": 60,
                     "category": "men",
                     "subcategory": "shirts",
+                    "searchtags":"shirts, formal, raymond, formal shirts, mens shirt",
                     "thumbnail": "/images/10.webp"
                 },
                 {
@@ -132,6 +142,7 @@
                     "ratings": 58,
                     "category": "men",
                     "subcategory": "pants",
+                    "searchtags":"pants, jeanse, denim jeanse, levis, mens jeans",
                     "thumbnail": "/images/11.webp"
                 },
                 {
@@ -144,6 +155,7 @@
                     "ratings": 80,
                     "category": "men",
                     "subcategory": "hoodies",
+                    "searchtags":"hoodies, sports hoodie, nike, mens hoodie",
                     "thumbnail": "/images/12.webp"
                 },
                 {
@@ -156,6 +168,7 @@
                     "ratings": 930,
                     "category": "women",
                     "subcategory": "sarees",
+                    "searchtags":"sarees, saree, kiaraa, womens saree",
                     "thumbnail": "/images/13.webp"
                 },
                 {
@@ -168,6 +181,7 @@
                     "ratings": 930,
                     "category": "women",
                     "subcategory": "dresses",
+                    "searchtags":"dresses, dress, kotty, women dress",
                     "thumbnail": "/images/14.webp"
                 },
                 {
@@ -180,6 +194,7 @@
                     "ratings": 930,
                     "category": "women",
                     "subcategory": "kurtis",
+                    "searchtags":"women, kurta, dharma, women kurta",
                     "thumbnail": "/images/15.webp"
                 },
                 {
@@ -192,6 +207,7 @@
                     "ratings": 930,
                     "category": "kids",
                     "subcategory": "tshirts",
+                    "searchtags":"tshirt, tshirts, kids tshirt, boys tshirt, john players",
                     "thumbnail": "/images/16.webp"
                 },
                 {
@@ -204,6 +220,7 @@
                     "ratings": 930,
                     "category": "kids",
                     "subcategory": "shorts",
+                    "searchtags":"shorts, short, kids shorts, boys short, mikey",
                     "thumbnail": "/images/17.webp"
                 },
                 {
@@ -216,6 +233,7 @@
                     "ratings": 930,
                     "category": "kids",
                     "subcategory": "winterwear",
+                    "searchtags":"winterwear, jacket, kids jacket, gini & jony",
                     "thumbnail": "/images/18.webp"
                 },
                 {
@@ -228,6 +246,7 @@
                     "ratings": 60,
                     "category": "men",
                     "subcategory": "shirts",
+                    "searchtags":"shirt, shirts, cotton king, mens shirt",
                     "thumbnail": "/images/19.webp"
                 },
                 {
@@ -240,6 +259,7 @@
                     "ratings": 58,
                     "category": "men",
                     "subcategory": "pants",
+                    "searchtags":"trouser, trousers, tanip, mens trouser, mens pant",
                     "thumbnail": "/images/20.webp"
                 },
                 {
@@ -252,6 +272,7 @@
                     "ratings": 80,
                     "category": "men",
                     "subcategory": "hoodies",
+                    "searchtags":"hoodies, hoodie, puma, jackets, mens hoodie, jacket",
                     "thumbnail": "/images/21.webp"
                 },
                 {
@@ -264,6 +285,7 @@
                     "ratings": 930,
                     "category": "women",
                     "subcategory": "sarees",
+                    "searchtags":"sarees, saree, banarasi, banarasi saree, women",
                     "thumbnail": "/images/22.webp"
                 },
                 {
@@ -276,6 +298,7 @@
                     "ratings": 930,
                     "category": "women",
                     "subcategory": "dresses",
+                    "searchtags":"dresses, dresse, zara, women, womens dress",
                     "thumbnail": "/images/23.webp"
                 },
                 {
@@ -288,6 +311,7 @@
                     "ratings": 930,
                     "category": "women",
                     "subcategory": "kurtis",
+                    "searchtags":"kurtis, kurti, fabindia, women, womens kurta",
                     "thumbnail": "/images/24.webp"
                 },
                 {
@@ -300,6 +324,7 @@
                     "ratings": 930,
                     "category": "kids",
                     "subcategory": "tshirts",
+                    "searchtags":"tshirts, tshirt, fabindia, kids, kids tshirt, boys tshirt",
                     "thumbnail": "/images/25.webp"
                 },
                 {
@@ -312,6 +337,7 @@
                     "ratings": 930,
                     "category": "kids",
                     "subcategory": "shorts",
+                    "searchtags":"shorts, short, gini & jony, kids, kids short, joggers",
                     "thumbnail": "/images/26.webp"
                 },
                 {
@@ -324,7 +350,125 @@
                     "ratings": 930,
                     "category": "kids",
                     "subcategory": "winterwear",
+                    "searchtags":"winterwears, mikey, kids, kids zipper, winterwear",
                     "thumbnail": "/images/27.webp"
+                },
+                {
+                    "pid": 28,
+                    "row": "products_112",
+                    "brand":"Park Avenue",
+                    "title": "Slim Fit Shirt",
+                    "price": 679,
+                    "subtitle": "woolen cloth for summer and winter",
+                    "ratings": 60,
+                    "category": "men",
+                    "subcategory": "shirts",
+                    "searchtags":"shirts, shirt, park avenue, mens shirt, formal shirts",
+                    "thumbnail": "/images/28.webp"
+                },
+                {
+                    "pid": 29,
+                    "row": "products_113",
+                    "brand":"Indiclub",
+                    "title": "Strechable Casual Trouser",
+                    "price": 345,
+                    "subtitle": "silicon glves with strong material",
+                    "ratings": 58,
+                    "category": "men",
+                    "subcategory": "pants",
+                    "searchtags":"pants, pant, indiclub, mens trouser, trousers, trouser",
+                    "thumbnail": "/images/29.webp"
+                },
+                {
+                    "pid": 30,
+                    "row": "products_114",
+                    "brand":"Roadster",
+                    "title": "Solid Bomber",
+                    "price": 812,
+                    "subtitle": 2,
+                    "ratings": 80,
+                    "category": "men",
+                    "subcategory": "hoodies",
+                    "searchtags":"hoodies, hoodie, roadster, mens hoodie, mens hoodies, bomber",
+                    "thumbnail": "/images/30.webp"
+                },
+                {
+                    "pid": 31,
+                    "row": "products_115",
+                    "brand":"King Vulture",
+                    "title": "Woven Banarasi Saree",
+                    "price": 609,
+                    "subtitle": 1,
+                    "ratings": 930,
+                    "category": "women",
+                    "subcategory": "sarees",
+                    "searchtags":"sarees, saree, women sarees, banarasi, banarasi sarees",
+                    "thumbnail": "/images/31.webp"
+                },
+                {
+                    "pid": 32,
+                    "row": "products_116",
+                    "brand":"Presha",
+                    "title": "Maxi Dress",
+                    "price": 1549,
+                    "subtitle": 1,
+                    "ratings": 930,
+                    "category": "women",
+                    "subcategory": "dresses",
+                    "searchtags":"dresses, dress, presha, women dresses, womens dress",
+                    "thumbnail": "/images/32.webp"
+                },
+                {
+                    "pid": 33,
+                    "row": "products_117",
+                    "brand":"Fashtown",
+                    "title": "Chicken Embroidery Kurti",
+                    "price": 559,
+                    "subtitle": 1,
+                    "ratings": 930,
+                    "category": "women",
+                    "subcategory": "kurtis",
+                    "searchtags":"kurtis, kurta, kurtas, womens kurtas, womens kurtis",
+                    "thumbnail": "/images/33.webp"
+                },
+                {
+                    "pid": 34,
+                    "row": "products_118",
+                    "brand":"Billion",
+                    "title": "Boys Stripped T-shirt",
+                    "price": 258,
+                    "subtitle": 1,
+                    "ratings": 930,
+                    "category": "kids",
+                    "subcategory": "tshirts",
+                    "searchtags":"tshirts, tshirt, kids, kids tshirt, boys tshirt",
+                    "thumbnail": "/images/34.webp"
+                },
+                {
+                    "pid": 35,
+                    "row": "products_119",
+                    "brand":"MIST N FOGG",
+                    "title": "Boys Casual Shorts",
+                    "price": 350,
+                    "subtitle": 1,
+                    "ratings": 930,
+                    "category": "kids",
+                    "subcategory": "shorts",
+                    "searchtags":"shorts, short, kids, kids shorts, boys shorts",
+                    "thumbnail": "/images/35.webp"
+                },
+                {
+                    "pid": 36,
+                    "row": "products_120",
+                    "brand":"Hellcat",
+                    "title": "Full Sleeve Hoodie",
+                    "price": 399,
+                    "subtitle": 1,
+                    "ratings": 930,
+                    "category": "kids",
+                    "subcategory": "winterwear",
+                    "searchtags":"winterwear, winterwears, kids, kids hoodie, hoodies, hoodie",
+                    "thumbnail": "/images/36.webp"
                 }
 		]
 	}

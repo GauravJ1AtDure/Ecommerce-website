@@ -2,9 +2,26 @@
     cursor: pointer;
 }
 
-/* #product-categories{
-    min-width: unset;
-} */
+.navbar, .carousel-inner .carousel-item{
+    background-color: #FAFBFB;
+}
+
+.carousel-inner .carousel-item img{
+    height: 30em;
+}
+
+.carousel-inner .carousel-item:nth-child(2) .carousel-caption{
+    top: 0;
+}
+
+.carousel-caption{
+    color: #415161;
+}
+
+.container .row .col-lg-3 .card .card-body img{
+    width: 18vw; 
+    height: 30vh;
+}
 
 #product-categories li{
    list-style-type: none;
@@ -15,23 +32,22 @@
     border-radius: 15em;
 }
 
+#product-categories li{
+    list-style-type: none;
+    cursor: pointer;
+ }
+
 #product-categories li:hover{
     background-color: antiquewhite;
     cursor: pointer;
 }
 
-#child_nav {
-    display: none;
+
+#footer{
+    background-color: #415161;
 }
 
-#parent_nav:hover #child_nav {
-    display: block;
-<<<<<<< HEAD
+#footer .row{
+    padding: 10px;
+    color: #FFFFFF;
 }
-
-
-=======
-} */
-
-
->>>>>>> parent of 85fce98 (working on home page and adding extra products)

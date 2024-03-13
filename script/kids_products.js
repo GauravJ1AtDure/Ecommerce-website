@@ -1,7 +1,8 @@
-let cartArr=[]
+let selectedProduct
 let dropdown_filter=document.querySelector('#dropdown_filter')
-let dataRow1
-let men_products=[]
+let dataRow1=[]
+let all_kids_products=[]
+let kids_products=[]
 let product_container
 let row = document.getElementById('row');
 let p ='all', t
@@ -32,27 +33,30 @@ fetch("/data/products.json")
     //console.log(data[0].products_101)
     //dataRow1 = JSON.stringify(data[0].products)
     dataRow1 = [...data[0].products_101]
-   // unique_products = [...new Set(men_products)];
+    all_kids_products = dataRow1.filter((product) => {
+      return product.category==="kids";
+    })
+
+   // unique_products = [...new Set(kids_products)];
    
    row.innerHTML=''
    if (t ==='low_to_high')
    {
-    dataRow1.sort((a, b) => a.price - b.price)
+    all_kids_products.sort((a, b) => a.price - b.price)
   }
    else if(t==='high_to_low')
    {
-    dataRow1.sort((a, b) => b.price - a.price)
+    all_kids_products.sort((a, b) => b.price - a.price)
    }
 
-   dataRow1.forEach((product, index) => {
+   all_kids_products.forEach((product, index) => {
 
-    if(product.category==='kids')
-{
+ 
     product_container =`<div class="col-lg-3 col-md-6 mb-4">
     <!-- Card-->
     <div class="card rounded shadow-sm border-0">
       <div class="card-body p-4"><img src=${product.thumbnail} alt="" class="img-fluid d-block mx-auto mb-3" style="
-      height: 15em;width: 20vw;"><div class="row justify-content-between"><div class="col-8"><a href="/pages/product_card.html"><h6> <button onclick="pushToCart(${index})" row=${product.row} class="text-dark" style="border: none; background-color: transparent;">${product.brand}</button></h6></a></div><div class="col-4">
+      height: 15em;width: 20vw;"><div class="row justify-content-between"><div class="col-8"><a href="/pages/product_card.html"><h6> <button onclick="checkout_all(${index})" row=${product.row} class="text-dark" style="border: none; background-color: transparent;">${product.brand}</button></h6></a></div><div class="col-4">
       <h6>&#x20B9;${product.price}</h6>
     </div></div>
     <div class="row justify-content-between">
@@ -72,7 +76,7 @@ fetch("/data/products.json")
   ` 
 
   row.innerHTML+=product_container
-}
+
   });
  
 });
@@ -86,13 +90,13 @@ let selectDropDown=(y)=>{
   
   if (t ==='low_to_high')
   {
-    men_products.sort((a, b) => a.price - b.price)
+    kids_products.sort((a, b) => a.price - b.price)
     dataRow1.sort((a, b) => a.price - b.price)
     selectSubCategory(p)
 }
 else if(t ==='high_to_low')
 {
-  men_products.sort((a, b) => b.price - a.price)
+  kids_products.sort((a, b) => b.price - a.price)
   dataRow1.sort((a, b) => b.price - a.price)
   selectSubCategory(p)
 }
@@ -101,8 +105,8 @@ else if(t ==='high_to_low')
 
 let selectSubCategory=(x)=>{
   p=x
-
-if(p ==='all')
+  
+ if(p ==='all')
 {
   fetchData()
 }
@@ -110,23 +114,23 @@ if(p ==='all')
 //row4.innerHTML+=product_container
 
  // changeDoc()
- //displayArr = [...men_products]
- men_products = dataRow1.filter((product) => {
+ //displayArr = [...kids_products]
+ kids_products = dataRow1.filter((product) => {
   return product.subcategory===p;
 })
 
 
 row.innerHTML=''
-//console.log('men_products', men_products.sort((a, b) => a.price - b.price))
+//console.log('kids_products', kids_products.sort((a, b) => a.price - b.price))
  // console.log('dropdown_filter',dropdown_filter)
-  console.log('p',p)
+ // console.log('p',p)
   
-  men_products.forEach((product, index) => {
+  kids_products.forEach((product, index) => {
     product_container =`<div class="col-lg-3 col-md-6 mb-4">
     <!-- Card-->
     <div class="card rounded shadow-sm border-0">
       <div class="card-body p-4"><img src=${product.thumbnail} alt="" class="img-fluid d-block mx-auto mb-3" style="
-      height: 15em;width: 20vw;"><div class="row justify-content-between"><div class="col-8"><a href="/pages/product_card.html"><h6> <button onclick="pushToCart(${index})" row=${product.row} class="text-dark" style="border: none; background-color: transparent;">${product.brand}</button></h6></a></div><div class="col-4">
+      height: 15em;width: 20vw;"><div class="row justify-content-between"><div class="col-8"><a href="/pages/product_card.html"><h6> <button onclick="checkout(${index})" row=${product.row} class="text-dark" style="border: none; background-color: transparent;">${product.brand}</button></h6></a></div><div class="col-4">
       <h6>&#x20B9;${product.price}</h6>
     </div></div>
     <div class="row justify-content-between">
@@ -145,13 +149,10 @@ row.innerHTML=''
   </div>
   ` 
   
-  
-  
   row.innerHTML+=product_container
   
   });
   
- 
   
 }
 
@@ -166,11 +167,19 @@ if(p ==='all')
 //console.log('p',p)
  var card = document.querySelector(".card")
 var addToCartBtn = document.querySelector('#addToCartBtn');
- pushToCart = (a)=>{
+
+
+ let checkout = (a)=>{
  // console.log('data',data[0].products_101[a])
- cartArr.push(data[0].products_101[a])
- localStorage.setItem('productCart',JSON.stringify(cartArr))
- console.log(cartArr)
-    navCart.innerHTML=cartArr.length
-    
+ selectedProduct = kids_products[a]
+// selectedProduct = all_kids_products[a]
+ localStorage.setItem('selectedProduct',JSON.stringify(selectedProduct))
+ //console.log(selectedProduct) 
   }
+
+  let checkout_all = (b)=>{
+   console.log('data',all_kids_products[b])
+    selectedProduct = all_kids_products[b]
+    localStorage.setItem('selectedProduct',JSON.stringify(selectedProduct))
+   console.log('selectedProduct',selectedProduct) 
+     }

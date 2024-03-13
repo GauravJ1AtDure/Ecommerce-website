@@ -1,12 +1,16 @@
-let cartArr=[]
+let selectedProduct
 let dropdown_filter=document.querySelector('#dropdown_filter')
-let dataRow1
+let dataRow1=[]
+let all_men_products=[]
+let searchResult=[]
 let men_products=[]
+let searchResultMen=[]
 let product_container
 let row = document.getElementById('row');
 let p ='all', t
 let filter_btn=document.querySelector('#filter_btn')
 let navCart=document.querySelector('#navCart')
+let searchInput=document.querySelector('#searchInput')
 
 let starsvg = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-star-fill" viewBox="0 0 16 16">
     <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
@@ -22,6 +26,11 @@ let starsvg = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fi
     <path d="M8 4a.5.5 0 0 1 .5.5V6H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V7H6a.5.5 0 0 1 0-1h1.5V4.5A.5.5 0 0 1 8 4"/>
   </svg>`
 
+
+
+
+
+ 
 let fetchData=()=>{
 fetch("/data/products.json")
 .then(response => {
@@ -32,27 +41,38 @@ fetch("/data/products.json")
     //console.log(data[0].products_101)
     //dataRow1 = JSON.stringify(data[0].products)
     dataRow1 = [...data[0].products_101]
+
+    all_men_products = dataRow1.filter((product) => {
+      return product.category==="men";
+    })
+    searchResult=all_men_products.filter((item) => {
+     return item.searchtags.includes(searchInput.value)
+    })
+    
+
    // unique_products = [...new Set(men_products)];
    
    row.innerHTML=''
    if (t ==='low_to_high')
    {
-    dataRow1.sort((a, b) => a.price - b.price)
+    searchResult.sort((a, b) => a.price - b.price)
+    //console.log('searchInput',all_men_products.find((a)=>{return a.brand === 'Raymond' }))
   }
    else if(t==='high_to_low')
    {
-    dataRow1.sort((a, b) => b.price - a.price)
-   }
+    searchResult.sort((a, b) => b.price - a.price)
+    }
+   
+   // all_men_products.filter((item) => item.searchtags.includes(searchInput.value))
 
-   dataRow1.forEach((product, index) => {
+   searchResult.forEach((product, index) => {
 
-    if(product.category==='men')
-{
+    
     product_container =`<div class="col-lg-3 col-md-6 mb-4">
     <!-- Card-->
     <div class="card rounded shadow-sm border-0">
       <div class="card-body p-4"><img src=${product.thumbnail} alt="" class="img-fluid d-block mx-auto mb-3" style="
-      height: 15em;width: 20vw;"><div class="row justify-content-between"><div class="col-8"><a href="/pages/product_card.html"><h6> <button onclick="pushToCart(${index})" row=${product.row} class="text-dark" style="border: none; background-color: transparent;">${product.brand}</button></h6></a></div><div class="col-4">
+      height: 15em;width: 20vw;"><div class="row justify-content-between"><div class="col-8"><a href="/pages/product_card.html"><h6> <button onclick="checkout_all(${index})" row=${product.row} class="text-dark" style="border: none; background-color: transparent;">${product.brand}</button></h6></a></div><div class="col-4">
       <h6>&#x20B9;${product.price}</h6>
     </div></div>
     <div class="row justify-content-between">
@@ -72,7 +92,7 @@ fetch("/data/products.json")
   ` 
 
   row.innerHTML+=product_container
-}
+
   });
  
 });
@@ -86,14 +106,14 @@ let selectDropDown=(y)=>{
   
   if (t ==='low_to_high')
   {
-    men_products.sort((a, b) => a.price - b.price)
-    dataRow1.sort((a, b) => a.price - b.price)
+    searchResultMen.sort((a, b) => a.price - b.price)
+    searchResult.sort((a, b) => a.price - b.price)
     selectSubCategory(p)
 }
 else if(t ==='high_to_low')
 {
-  men_products.sort((a, b) => b.price - a.price)
-  dataRow1.sort((a, b) => b.price - a.price)
+  searchResultMen.sort((a, b) => b.price - a.price)
+  searchResult.sort((a, b) => b.price - a.price)
   selectSubCategory(p)
 }
 }
@@ -115,18 +135,24 @@ let selectSubCategory=(x)=>{
   return product.subcategory===p;
 })
 
+searchResultMen=men_products.filter((item) => {
+  return item.searchtags.includes(searchInput.value)
+ })
+
+
+
 
 row.innerHTML=''
 //console.log('men_products', men_products.sort((a, b) => a.price - b.price))
  // console.log('dropdown_filter',dropdown_filter)
-  console.log('p',p)
+ // console.log('p',p)
   
-  men_products.forEach((product, index) => {
+ searchResultMen.forEach((product, index) => {
     product_container =`<div class="col-lg-3 col-md-6 mb-4">
     <!-- Card-->
     <div class="card rounded shadow-sm border-0">
       <div class="card-body p-4"><img src=${product.thumbnail} alt="" class="img-fluid d-block mx-auto mb-3" style="
-      height: 15em;width: 20vw;"><div class="row justify-content-between"><div class="col-8"><a href="/pages/product_card.html"><h6> <button onclick="pushToCart(${index})" row=${product.row} class="text-dark" style="border: none; background-color: transparent;">${product.brand}</button></h6></a></div><div class="col-4">
+      height: 15em;width: 20vw;"><div class="row justify-content-between"><div class="col-8"><a href="/pages/product_card.html"><h6> <button onclick="checkout(${index})" row=${product.row} class="text-dark" style="border: none; background-color: transparent;">${product.brand}</button></h6></a></div><div class="col-4">
       <h6>&#x20B9;${product.price}</h6>
     </div></div>
     <div class="row justify-content-between">
@@ -152,22 +178,53 @@ row.innerHTML=''
   
 }
 
-
-
-
 if(p ==='all')
 {
   fetchData()
+  
 }
+
+
+   let getResult=()=>
+   {
+    
+    fetchData()
+   console.log(all_men_products.filter((item) => item.searchtags.includes(searchInput.value)))
+   console.log(all_men_products)
+   console.log(searchInput.value.length)
+   }
+
+
+   let clearFilter=()=>{
+
+    if(searchInput.value.length===0)
+    {
+      fetchData()
+      searchResultMen=all_men_products.filter((item) => {
+        return item.searchtags.includes(searchInput.value)
+       })
+    }
+
+  }
+
+  
 
 //console.log('p',p)
  var card = document.querySelector(".card")
 var addToCartBtn = document.querySelector('#addToCartBtn');
- pushToCart = (a)=>{
+
+
+ let checkout = (a)=>{
  // console.log('data',data[0].products_101[a])
- cartArr.push(data[0].products_101[a])
- localStorage.setItem('productCart',JSON.stringify(cartArr))
- console.log(cartArr)
-    navCart.innerHTML=cartArr.length
-    
+ selectedProduct = searchResultMen[a]
+// selectedProduct = all_men_products[a]
+ localStorage.setItem('selectedProduct',JSON.stringify(selectedProduct))
+ //console.log(selectedProduct) 
   }
+
+  let checkout_all = (b)=>{
+  // console.log('data',all_men_products[b])
+    selectedProduct = searchResult[b]
+    localStorage.setItem('selectedProduct',JSON.stringify(selectedProduct))
+  // console.log('selectedProduct',selectedProduct) 
+     }
